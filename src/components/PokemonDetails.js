@@ -10,8 +10,14 @@ class PokemonDetails extends Component {
     }
 
     render(){
+        const {id, name}= this.props.pokemonDetails;
         return (
-            <div>Pokemon Details works</div>
+            <div>
+                <div>Pokemon Details</div>
+                <div>Id: {id}</div>
+                <div>Name: {name}</div>
+                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt="sprite"/>
+            </div>
         )
     }
 }
