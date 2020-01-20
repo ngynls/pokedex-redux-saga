@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Routes from './routes';
-import Navbar from './components/shared/Navbar';
+import NavigationBar from './components/shared/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <NavigationBar/>
       <Routes/>
     </div>
   );
