@@ -3,7 +3,7 @@ import axios from 'axios';
 const POKEAPI_BASE_URL= 'https://pokeapi.co/api/v2';
 
 const getDefaultPokemons= async () =>{
-    const data=await axios.get(`${POKEAPI_BASE_URL}/pokemon`);
+    const data=await axios.get(`${POKEAPI_BASE_URL}/pokemon?limit=151`);
     return data;
 }
 

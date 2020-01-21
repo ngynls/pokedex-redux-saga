@@ -5,18 +5,23 @@ import * as actions from '../store/actions/actions';
 class PokemonDetails extends Component {
 
     componentDidMount(){
+        this.fetchDetails();
+    }
+
+    fetchDetails= async()=>{
         const id=this.props.match.params.id;
-        this.props.fetchPokemonDetails(id);
+        await this.props.fetchPokemonDetails(id);
     }
 
     render(){
         const {id, name}= this.props.pokemonDetails;
+        const spriteUrl=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         return (
             <div>
                 <div>Pokemon Details</div>
                 <div>Id: {id}</div>
                 <div>Name: {name}</div>
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt="sprite"/>
+                <img src={spriteUrl} alt="sprite"/>
             </div>
         )
     }

@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './store/reducers';
 import rootSaga from './store/sagas';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/shared/Navbar.scss';
 
 const sagaMiddleware=createSagaMiddleware();
 const store=createStore(

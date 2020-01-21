@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/actions';
+import PokedexElement from './PokedexElement';
 
 class Home extends Component{
 
@@ -10,7 +11,15 @@ class Home extends Component{
 
     render(){
         return(
-            <div>Homepage works!</div>
+            <div className="container">
+                <div className="row">
+                    {
+                        this.props.pokemons.map( (pokemon, i) => {
+                            return <div className="col-xl-4 col-lg-6 col-md-4"><PokedexElement key={i+1} id={i+1} pokemon={pokemon} /></div>
+                        })
+                    }
+                </div>
+            </div>
         );
     }
 }
