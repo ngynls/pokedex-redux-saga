@@ -12,7 +12,13 @@ const getPokemonDetails= async id =>{
     return data;
 }
 
+const getSpeciesDetails= async id =>{
+    const data= await axios.get(`${POKEAPI_BASE_URL}/pokemon-species/${id}`);
+    return data;
+}
+
 export const api={
     getDefaultPokemons,
-    getPokemonDetails
+    getPokemonDetails,
+    getSpeciesDetails
 };

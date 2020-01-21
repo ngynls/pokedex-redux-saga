@@ -2,8 +2,11 @@ import * as ACTION_TYPES from '../actions/action_types';
 
 const initialState={
     pokemonDetails:[],
+    speciesDetails:[],
     loading: false,
-    error: false
+    error: false,
+    loading_species_details: false,
+    error_species_details: false
 };
 
 const pokemonDetailsReducer=(state=initialState, action)=>{
@@ -24,6 +27,24 @@ const pokemonDetailsReducer=(state=initialState, action)=>{
             return {
                 ...state,
                 loading: true
+            }
+        case ACTION_TYPES.FETCH_SPECIES_DETAILS_SUCCESS:
+            return {
+                ...state,
+                speciesDetails: action.payload,
+                loading_species_details:false,
+                error_species_details:false
+            }
+        case ACTION_TYPES.FETCH_SPECIES_DETAILS_FAILURE:
+            return {
+                ...state,
+                loading_species_details:false,
+                error_species_details:true
+            }
+        case ACTION_TYPES.FETCH_SPECIES_DETAILS_REQUESTED:
+            return {
+                ...state,
+                loading_species_details:true
             }
         default:
             return state;

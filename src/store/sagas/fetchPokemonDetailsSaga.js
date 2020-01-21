@@ -14,8 +14,20 @@ function* fetchPokemonDetails(action){
     }
 }
 
+function* fetchSpeciesDetails(action){
+    try{
+        const data=yield call(api.getSpeciesDetails, action.payload);
+        yield put(actions.fetch_species_details_success(data));
+    }
+    catch(error){
+        yield put(actions.fetch_species_details_failure());
+        return;
+    }
+}
+
 export default function* watchFetchPokemonDetails(){
     yield all([
         takeLatest(ACTION_TYPES.FETCH_POKEMON_DETAILS_REQUESTED, fetchPokemonDetails),
+        takeLatest(ACTION_TYPES.FETCH_SPECIES_DETAILS_REQUESTED, fetchSpeciesDetails),
     ]);
 }
