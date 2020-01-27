@@ -58,3 +58,10 @@ export const fetch_species_details_requested= id =>{
         payload: id
     };
 }
+
+export const search_by_name= name =>{
+    return {
+        type: ACTION_TYPES.SEARCH_BY_NAME,
+        payload: name
+    }
+}

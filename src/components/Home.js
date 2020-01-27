@@ -10,13 +10,18 @@ class Home extends Component{
     }
 
     render(){
+        const pokemonList=this.props.pokemons.map( (pokemon, i) => {
+            return (
+                <div className="col-xl-4 col-lg-6 col-md-4" key={i+1}>
+                    <PokedexElement key={i+1} id={i+1} pokemon={pokemon} />
+                </div>
+            );
+        });
         return(
             <div className="container">
                 <div className="row">
                     {
-                        this.props.pokemons.map( (pokemon, i) => {
-                            return <div className="col-xl-4 col-lg-6 col-md-4"><PokedexElement key={i+1} id={i+1} pokemon={pokemon} /></div>
-                        })
+                        pokemonList
                     }
                 </div>
             </div>
@@ -34,7 +39,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        fetchPokemons: ()=> dispatch(actions.fetch_pokemon_requested())
+        fetchPokemons: ()=> dispatch(actions.fetch_pokemon_requested()),
+        searchPokemonByName: (name)=>dispatch(actions.search_by_name(name))
     }
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/actions';
+import '../components/PokemonDetails.scss';
 
 class PokemonDetails extends Component {
 
@@ -14,16 +15,40 @@ class PokemonDetails extends Component {
         await this.props.fetchSpeciesDetails(id);
     }
 
+    displayTypes=(types)=>{
+        types.map((type, i) => {
+            return (
+                <span className="badge badge-pill" key={i}>{type.type.name}</span>
+            );
+        });
+    } 
+
     render(){
-        const {id, name}= this.props.pokemonDetails;
-        //const description=this.props.speciesDetails.flavor_text_entries[1].flavor_text;
+        const {id, name, height, weight}= this.props.pokemonDetails;
+        //const description=this.props.speciesDetails.flavor_text_entries;
         const spriteUrl=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         return (
-            <div>
-                <div>Pokemon Details</div>
-                <div>Id: {id}</div>
-                <div>Name: {name}</div>
-                <img src={spriteUrl} alt="sprite"/>
+            <div className="container">
+                {
+                    this.props.loading && this.props.loading_species_details ?
+                    (
+                        <div>Loading...</div>
+                    )
+                    :
+                    (
+                        <div className="details-container">
+                            <div className="jumbotron">
+                                <img src={spriteUrl} alt="sprite"/>
+                            </div>
+                            <div className="id-section">Id: {id}</div>
+                            <div className="name-section">Name: {name}</div>
+                            <div className="type-section">
+                            </div>
+                            <div className="height-section">Height: {height} dm</div>
+                            <div className="weight-section">Weight: {weight} hg</div>
+                        </div>
+                    )
+                }
             </div>
         )
     }

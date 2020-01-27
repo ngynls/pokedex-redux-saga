@@ -25,6 +25,8 @@ const pokemonReducer=(state=initialState, action)=>{
                 ...state,
                 loading: true
             }
+        case ACTION_TYPES.SEARCH_BY_NAME:
+            return state.pokemons.filter(pokemon => pokemon.name === action.payload);
         default:
             return state;
     }
