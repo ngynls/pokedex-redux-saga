@@ -40,7 +40,6 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return {
         fetchPokemons: ()=> dispatch(actions.fetch_pokemon_requested()),
-        searchPokemonByName: (name)=>dispatch(actions.search_by_name(name))
     }
 }
 

@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import '../components/PokedexElement.scss';
+import PokedexUtils from '../components/shared/PokedexUtils';
 
 class PokedexElement extends Component {
 
-    capitalizeName = name =>{
-        return name.charAt(0).toUpperCase() + name.slice(1);
-    }
-
     render(){
         const id=this.props.id;
-        const name= this.capitalizeName(this.props.pokemon.name);
+        const name= PokedexUtils.capitalizeName(this.props.pokemon.name);
         const spriteUrl=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
         return (

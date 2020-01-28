@@ -17,8 +17,14 @@ const getSpeciesDetails= async id =>{
     return data;
 }
 
+const retrieveDataFromUrl= async url =>{
+    const data= await axios.get(url);
+    return data;
+}
+
 export const api={
     getDefaultPokemons,
     getPokemonDetails,
-    getSpeciesDetails
+    getSpeciesDetails,
+    retrieveDataFromUrl
 };

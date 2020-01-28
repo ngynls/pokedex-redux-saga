@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/actions';
 import '../components/PokemonDetails.scss';
+import PokemonDetailElement from './PokemonDetailElement';
 
 class PokemonDetails extends Component {
+
+    state={
+        id: '',
+        spriteUrl: ''
+    }
 
     componentDidMount(){
         this.fetchDetails();
@@ -11,22 +17,17 @@ class PokemonDetails extends Component {
 
     fetchDetails= async()=>{
         const id=this.props.match.params.id;
+        const spriteUrl='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png';
         await this.props.fetchPokemonDetails(id);
         await this.props.fetchSpeciesDetails(id);
+        this.setState({
+            ...this.state,
+            id,
+            spriteUrl,
+        });
     }
 
-    displayTypes=(types)=>{
-        types.map((type, i) => {
-            return (
-                <span className="badge badge-pill" key={i}>{type.type.name}</span>
-            );
-        });
-    } 
-
     render(){
-        const {id, name, height, weight}= this.props.pokemonDetails;
-        //const description=this.props.speciesDetails.flavor_text_entries;
-        const spriteUrl=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         return (
             <div className="container">
                 {
@@ -36,17 +37,17 @@ class PokemonDetails extends Component {
                     )
                     :
                     (
-                        <div className="details-container">
-                            <div className="jumbotron">
-                                <img src={spriteUrl} alt="sprite"/>
-                            </div>
-                            <div className="id-section">Id: {id}</div>
-                            <div className="name-section">Name: {name}</div>
-                            <div className="type-section">
-                            </div>
-                            <div className="height-section">Height: {height} dm</div>
-                            <div className="weight-section">Weight: {weight} hg</div>
-                        </div>
+                        <PokemonDetailElement 
+                        id={this.state.id} 
+                        name={this.props.name} 
+                        types={this.props.types}
+                        stats={this.props.stats}
+                        abilities={this.props.abilities} 
+                        height={this.props.height} 
+                        weight={this.props.weight} 
+                        description={this.props.description}
+                        spriteUrl={this.state.spriteUrl}
+                        />
                     )
                 }
             </div>
@@ -56,8 +57,13 @@ class PokemonDetails extends Component {
 
 function mapStateToProps(state){
     return {
-        pokemonDetails: state.pokemonDetailsReducer.pokemonDetails,
-        speciesDetails: state.pokemonDetailsReducer.speciesDetails,
+        name: state.pokemonDetailsReducer.name,
+        types: state.pokemonDetailsReducer.types,
+        height: state.pokemonDetailsReducer.height,
+        weight: state.pokemonDetailsReducer.weight,
+        description: state.pokemonDetailsReducer.description,
+        stats: state.pokemonDetailsReducer.stats,
+        abilities: state.pokemonDetailsReducer.abilities,
         loading: state.pokemonDetailsReducer.loading,
         error: state.pokemonDetailsReducer.error,
         loading_species_details: state.pokemonDetailsReducer.loading_species_details,
