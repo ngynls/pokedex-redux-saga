@@ -5,7 +5,6 @@ class PokemonDetailElement extends Component {
 
     displayTypes=()=>{
         return this.props.types.map((type, i) => {
-            console.log(type.type.name);
             let typeColor=PokedexUtils.getTypeColor(type.type.name);
             return (
                 <span 

@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot of PokedexDetailElement 1`] = `
+<div
+  className="details-container"
+>
+  <div
+    className="jumbotron"
+  >
+    <img
+      alt="sprite"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    />
+  </div>
+  <div
+    className="card"
+  >
+    <div
+      className="card-body"
+    >
+      <div
+        className="name-section"
+      >
+        <h2>
+          Bulbasaur
+        </h2>
+      </div>
+      <div
+        className="id-section"
+      >
+        <b>
+          Id:
+        </b>
+         #
+        1
+      </div>
+      <div
+        className="type-section"
+      >
+        <b>
+          Type: 
+        </b>
+        <span
+          className="badge badge-pill badge-primary"
+          style={
+            Object {
+              "backgroundColor": "#c5c5c5",
+            }
+          }
+        >
+          Poison
+        </span>
+        <span
+          className="badge badge-pill badge-primary"
+          style={
+            Object {
+              "backgroundColor": "#c5c5c5",
+            }
+          }
+        >
+          Grass
+        </span>
+      </div>
+      <div
+        className="height-section"
+      >
+        <b>
+          Height: 
+        </b>
+        0.7
+         m
+      </div>
+      <div
+        className="weight-section"
+      >
+        <b>
+          Weight: 
+        </b>
+        6.9
+         kg
+      </div>
+      <div
+        className="description-section"
+      >
+        <b>
+          Description: 
+        </b>
+        Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger.
+      </div>
+      <br />
+      <div
+        className="stats-section"
+      >
+        <h3>
+          Base Stats
+        </h3>
+        <hr />
+        <div
+          className="stat-element"
+        >
+          <span>
+            <b>
+              Speed
+            </b>
+             : 
+            45
+          </span>
+          <br />
+        </div>
+        <div
+          className="stat-element"
+        >
+          <span>
+            <b>
+              Special-defense
+            </b>
+             : 
+            65
+          </span>
+          <br />
+        </div>
+        <div
+          className="stat-element"
+        >
+          <span>
+            <b>
+              Special-attack
+            </b>
+             : 
+            65
+          </span>
+          <br />
+        </div>
+        <div
+          className="stat-element"
+        >
+          <span>
+            <b>
+              Defense
+            </b>
+             : 
+            49
+          </span>
+          <br />
+        </div>
+        <div
+          className="stat-element"
+        >
+          <span>
+            <b>
+              Attack
+            </b>
+             : 
+            49
+          </span>
+          <br />
+        </div>
+        <div
+          className="stat-element"
+        >
+          <span>
+            <b>
+              Hp
+            </b>
+             : 
+            45
+          </span>
+          <br />
+        </div>
+      </div>
+      <br />
+      <div
+        className="abilities-section"
+      >
+        <h3>
+          Abilities
+        </h3>
+        <hr />
+        <div
+          className="ability-element"
+        >
+          <span>
+            Chlorophyll
+          </span>
+        </div>
+        <div
+          className="ability-element"
+        >
+          <span>
+            Overgrow
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

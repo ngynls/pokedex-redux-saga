@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot of PokedexElement 1`] = `
+<a
+  className="card"
+  href="/pokemon/1"
+>
+  <img
+    alt="sprite"
+    className="card-img-top sprite-icon"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+  />
+  <div
+    className="card-body"
+  >
+    <p
+      className="card-text"
+    >
+      Bulbasaur
+    </p>
+  </div>
+</a>
+`;
