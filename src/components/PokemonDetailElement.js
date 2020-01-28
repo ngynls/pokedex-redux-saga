@@ -5,8 +5,16 @@ class PokemonDetailElement extends Component {
 
     displayTypes=()=>{
         return this.props.types.map((type, i) => {
+            console.log(type.type.name);
+            let typeColor=PokedexUtils.getTypeColor(type.type.name);
             return (
-                <span className="badge badge-pill badge-primary" key={i}>{PokedexUtils.capitalizeName(type.type.name)}</span>
+                <span 
+                className="badge badge-pill badge-primary" 
+                key={i}
+                style={{backgroundColor: typeColor}}
+                >
+                        {PokedexUtils.capitalizeName(type.type.name)}
+                </span>
             );
         });
     }

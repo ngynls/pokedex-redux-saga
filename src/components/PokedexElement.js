@@ -11,7 +11,7 @@ class PokedexElement extends Component {
 
         return (
             <a className="card" href={`/pokemon/${id}`}>
-                <img src={spriteUrl} className="card-img-top" alt="sprite" />
+                <img src={spriteUrl} className="card-img-top sprite-icon" alt="sprite" />
                 <div className="card-body">
                     <p className="card-text">{name}</p>
                 </div>
