@@ -58,3 +58,10 @@ export const fetch_species_details_requested= id =>{
         payload: id
     };
 }
+
+export const search_pokemon_by_name= searchTerm=>{
+    return {
+        type: ACTION_TYPES.SEARCH_POKEMON_BY_NAME,
+        payload: searchTerm
+    };
+}

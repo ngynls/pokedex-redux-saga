@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot of SearchBar component 1`] = `
+<div
+  className="search-filter-bar mt-4"
+>
+  <input
+    aria-label="Search"
+    className="form-control"
+    placeholder="Search for a Pokemon"
+    type="search"
+  />
+</div>
+`;

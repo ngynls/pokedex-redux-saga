@@ -5,6 +5,17 @@ exports[`matches snapshot of Home component 1`] = `
   className="container"
 >
   <div
+    className="search-filter-bar mt-4"
+  >
+    <input
+      aria-label="Search"
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Search for a Pokemon"
+      type="search"
+    />
+  </div>
+  <div
     className="row"
   />
 </div>
