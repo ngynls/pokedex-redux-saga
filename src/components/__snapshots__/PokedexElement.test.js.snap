@@ -4,6 +4,7 @@ exports[`matches snapshot of PokedexElement 1`] = `
 <a
   className="card"
   href="/pokemon/1"
+  onClick={[Function]}
 >
   <img
     alt="sprite"
