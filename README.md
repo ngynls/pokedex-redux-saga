@@ -1,5 +1,6 @@
-# Pokedex-Redux-Saga
-This project was made for the purpose of learning React.Js, Redux and Redux-Saga
+# Pokedex-Redux-Saga ![Build status](https://travis-ci.com/ngynls/pokedex-redux-saga.svg?branch=master)
+This project was made for the purpose of learning React.Js, Redux and Redux-Saga.
+
 Demo: https://pokedex-redux-saga.netlify.com/
 
 ## Available Scripts
