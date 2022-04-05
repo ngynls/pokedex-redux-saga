@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import PokemonDetails from './components/PokemonDetails';
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Home from "./components/Home";
+import PokemonDetails from "./components/PokemonDetails";
 
-class Routes extends Component{
+class Routes extends Component {
     render(){
-        return(
+        return (
             <div>
                 <Router>
                     <div>
@@ -16,7 +16,7 @@ class Routes extends Component{
                     </div>
                 </Router>
             </div>
-        )
+        );
     }
 }
 

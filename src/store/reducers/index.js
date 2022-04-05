@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import pokemonReducer from './pokemonReducer';
-import pokemonDetailsReducer from './pokemonDetailsReducer';
+import {combineReducers} from "redux";
+import pokemonReducer from "./pokemonReducer";
+import pokemonDetailsReducer from "./pokemonDetailsReducer";
 
-const rootReducer=combineReducers({
+const rootReducer = combineReducers({
     pokemonReducer,
     pokemonDetailsReducer
 });

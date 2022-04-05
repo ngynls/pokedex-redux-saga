@@ -1,11 +1,11 @@
-import * as ACTION_TYPES from '../actions/action_types';
-import PokedexUtils from '../../components/shared/PokedexUtils';
+import * as ACTION_TYPES from "../actions/action_types";
+import PokedexUtils from "../../components/shared/PokedexUtils";
 
-const initialState={
+const initialState = {
     pokemonDetails:[],
     speciesDetails:[],
-    name: '',
-    description: '',
+    name: "",
+    description: "",
     types: [],
     stats: [],
     abilities: [],
@@ -17,8 +17,8 @@ const initialState={
     error_species_details: false
 };
 
-const pokemonDetailsReducer=(state=initialState, action)=>{
-    switch(action.type){
+const pokemonDetailsReducer = (state = initialState, action) => {
+    switch (action.type){
         case ACTION_TYPES.FETCH_POKEMON_DETAILS_SUCCESS:
             return {
                 ...state,
@@ -36,32 +36,32 @@ const pokemonDetailsReducer=(state=initialState, action)=>{
                 ...state,
                 loading: false,
                 error: true
-            }
+            };
         case ACTION_TYPES.FETCH_POKEMON_DETAILS_REQUESTED:
             return {
                 ...state,
                 loading: true
-            }
+            };
         case ACTION_TYPES.FETCH_SPECIES_DETAILS_SUCCESS:
-            const en_description=action.payload.flavor_text_entries.filter((desc)=> desc.language.name === "en" && desc.version.name === "omega-ruby")[0].flavor_text;
+            const en_description = action.payload.flavor_text_entries.filter((desc) => desc.language.name === "en" && desc.version.name === "omega-ruby")[0].flavor_text;
             return {
                 ...state,
                 speciesDetails: action.payload,
                 description: en_description,
                 loading_species_details:false,
                 error_species_details:false
-            }
+            };
         case ACTION_TYPES.FETCH_SPECIES_DETAILS_FAILURE:
             return {
                 ...state,
                 loading_species_details:false,
                 error_species_details:true
-            }
+            };
         case ACTION_TYPES.FETCH_SPECIES_DETAILS_REQUESTED:
             return {
                 ...state,
                 loading_species_details:true
-            }
+            };
         default:
             return state;
     }

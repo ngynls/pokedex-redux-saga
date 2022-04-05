@@ -1,67 +1,67 @@
-import * as ACTION_TYPES from './action_types';
+import * as ACTION_TYPES from "./action_types";
 
-export const fetch_pokemon_success= (pokemons) =>{
+export const fetch_pokemon_success = (pokemons) => {
     return {
         type: ACTION_TYPES.FETCH_POKEMON_SUCCESS,
         payload: pokemons.data.results
     };
-}
+};
 
-export const fetch_pokemon_failure= () =>{
+export const fetch_pokemon_failure = () => {
     return {
-        type: ACTION_TYPES.FETCH_POKEMON_FAILURE,
+        type: ACTION_TYPES.FETCH_POKEMON_FAILURE
     };
-}
+};
 
-export const fetch_pokemon_requested= () =>{
+export const fetch_pokemon_requested = () => {
     return {
         type: ACTION_TYPES.FETCH_POKEMON_REQUESTED
     };
-}
+};
 
-export const fetch_pokemon_details_success= pokemonDetails =>{
+export const fetch_pokemon_details_success = pokemonDetails => {
     return {
         type: ACTION_TYPES.FETCH_POKEMON_DETAILS_SUCCESS,
         payload: pokemonDetails.data
     };
-}
+};
 
-export const fetch_pokemon_details_failure= () =>{
+export const fetch_pokemon_details_failure = () => {
     return {
-        type: ACTION_TYPES.FETCH_POKEMON_DETAILS_FAILURE,
+        type: ACTION_TYPES.FETCH_POKEMON_DETAILS_FAILURE
     };
-}
+};
 
-export const fetch_pokemon_details_requested= id =>{
+export const fetch_pokemon_details_requested = id => {
     return {
         type: ACTION_TYPES.FETCH_POKEMON_DETAILS_REQUESTED,
         payload: id
     };
-}
+};
 
-export const fetch_species_details_success= speciesDetails =>{
+export const fetch_species_details_success = speciesDetails => {
     return {
         type: ACTION_TYPES.FETCH_SPECIES_DETAILS_SUCCESS,
         payload: speciesDetails.data
     };
-}
+};
 
-export const fetch_species_details_failure= () =>{
+export const fetch_species_details_failure = () => {
     return {
-        type: ACTION_TYPES.FETCH_SPECIES_DETAILS_FAILURE,
+        type: ACTION_TYPES.FETCH_SPECIES_DETAILS_FAILURE
     };
-}
+};
 
-export const fetch_species_details_requested= id =>{
+export const fetch_species_details_requested = id => {
     return {
         type: ACTION_TYPES.FETCH_SPECIES_DETAILS_REQUESTED,
         payload: id
     };
-}
+};
 
-export const search_pokemon_by_name= searchTerm=>{
+export const search_pokemon_by_name = searchTerm => {
     return {
         type: ACTION_TYPES.SEARCH_POKEMON_BY_NAME,
         payload: searchTerm
     };
-}
+};

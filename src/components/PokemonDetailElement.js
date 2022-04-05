@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PokedexUtils from '../components/shared/PokedexUtils';
+import React, {Component} from "react";
+import PokedexUtils from "../components/shared/PokedexUtils";
 
 class PokemonDetailElement extends Component {
 
-    displayTypes=()=>{
+    displayTypes=() => {
         return this.props.types.map((type, i) => {
-            let typeColor=PokedexUtils.getTypeColor(type.type.name);
+            let typeColor = PokedexUtils.getTypeColor(type.type.name);
             return (
                 <span 
                 className="badge badge-pill badge-primary" 
@@ -18,25 +18,25 @@ class PokemonDetailElement extends Component {
         });
     }
     
-    displayStats=()=>{
-        return this.props.stats.map((stat,i)=>{
+    displayStats=() => {
+        return this.props.stats.map((stat, i) => {
             return (
                 <div className="stat-element"  key={i}>
                     <span><b>{PokedexUtils.capitalizeName(stat.stat.name)}</b> : {stat.base_stat}</span>
                     <br/>
                 </div>
-            )
-        })
+            );
+        });
     }
 
-    displayAbilities=()=>{
-        return this.props.abilities.map((ability, i)=>{
+    displayAbilities=() => {
+        return this.props.abilities.map((ability, i) => {
             return (
                 <div className="ability-element" key={i}>
                 <span>{PokedexUtils.capitalizeName(ability.ability.name)}</span>
                 </div>
-            )
-        })
+            );
+        });
     }
 
     render(){
@@ -62,7 +62,7 @@ class PokemonDetailElement extends Component {
                                 <h3>Base Stats</h3>
                                 <hr></hr>
                                 {
-                                    stats ? this.displayStats(): null
+                                    stats ? this.displayStats() : null
                                 }
                             </div>
                             <br/>
@@ -70,13 +70,13 @@ class PokemonDetailElement extends Component {
                                 <h3>Abilities</h3>
                                 <hr></hr>
                                 {
-                                    abilities ? this.displayAbilities(): null
+                                    abilities ? this.displayAbilities() : null
                                 }
                             </div>
                         </div>
                     </div>
                 </div>
-            )
+            );
     }
 }
 

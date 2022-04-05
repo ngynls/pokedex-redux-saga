@@ -1,20 +1,20 @@
-import * as ACTION_TYPES from '../actions/action_types';
+import * as ACTION_TYPES from "../actions/action_types";
 
-const initialState={
+const initialState = {
     pokemons:[],
     loading: false,
     error: false,
-    searchTerm: ''
+    searchTerm: ""
 };
 
-const pokemonReducer=(state=initialState, action)=>{
-    switch(action.type){
+const pokemonReducer = (state = initialState, action) => {
+    switch (action.type){
         case ACTION_TYPES.FETCH_POKEMON_SUCCESS:
-            const addPokemonIds=action.payload.map((pokemon, i)=>{
+            const addPokemonIds = action.payload.map((pokemon, i) => {
                 return {
                     ...pokemon,
-                    id: i+1
-                }
+                    id: i + 1
+                };
             });
             return {
                 ...state,
@@ -26,17 +26,17 @@ const pokemonReducer=(state=initialState, action)=>{
                 ...state,
                 loading: false,
                 error: true
-            }
+            };
         case ACTION_TYPES.FETCH_POKEMON_REQUESTED:
             return {
                 ...state,
                 loading: true
-            }
+            };
         case ACTION_TYPES.SEARCH_POKEMON_BY_NAME:
             return {
                 ...state,
                 searchTerm: action.payload
-            }
+            };
         default:
             return state;
     }

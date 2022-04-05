@@ -1,15 +1,15 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import PokemonDetailElement from './PokemonDetailElement';
+import React from "react";
+import renderer from "react-test-renderer";
+import PokemonDetailElement from "./PokemonDetailElement";
 
-test('matches snapshot of PokedexDetailElement', ()=>{
-    const id=1;
-    const name="Bulbasaur";
-    const types=[
-        {type: {name: 'Poison'}},
-        {type: {name: 'Grass'}}
+test("matches snapshot of PokedexDetailElement", () => {
+    const id = 1;
+    const name = "Bulbasaur";
+    const types = [
+        {type: {name: "Poison"}},
+        {type: {name: "Grass"}}
     ];
-    const stats=[
+    const stats = [
         {
             base_stat: 45,
             stat:{name: "Speed"}
@@ -35,15 +35,15 @@ test('matches snapshot of PokedexDetailElement', ()=>{
             stat:{name: "Hp"}
         }
     ];
-    const abilities=[
-        {ability: {name: 'Chlorophyll'}},
-        {ability: {name: 'Overgrow'}},
+    const abilities = [
+        {ability: {name: "Chlorophyll"}},
+        {ability: {name: "Overgrow"}}
     ];
-    const height= 0.7;
-    const weight=6.9;
-    const description="Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger.";
-    const spriteUrl="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png";
-    const tree=renderer.create(<PokemonDetailElement 
+    const height = 0.7;
+    const weight = 6.9;
+    const description = "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger.";
+    const spriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png";
+    const tree = renderer.create(<PokemonDetailElement 
         id={id} 
         name={name} 
         types={types}

@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../store/actions/actions';
-import '../components/PokemonDetails.scss';
-import PokemonDetailElement from './PokemonDetailElement';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import * as actions from "../store/actions/actions";
+import "../components/PokemonDetails.scss";
+import PokemonDetailElement from "./PokemonDetailElement";
 
 class PokemonDetails extends Component {
 
     state={
-        id: '',
-        spriteUrl: ''
+        id: "",
+        spriteUrl: ""
     }
 
     componentDidMount(){
         this.fetchDetails();
     }
 
-    fetchDetails= async()=>{
-        const id=this.props.match.params.id;
-        const spriteUrl='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+id+'.png';
+    fetchDetails= async() => {
+        const id = this.props.match.params.id;
+        const spriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png";
         await this.props.fetchPokemonDetails(id);
         await this.props.fetchSpeciesDetails(id);
         this.setState({
             ...this.state,
             id,
-            spriteUrl,
+            spriteUrl
         });
     }
 
@@ -51,7 +51,7 @@ class PokemonDetails extends Component {
                     )
                 }
             </div>
-        )
+        );
     }
 }
 
@@ -68,14 +68,14 @@ function mapStateToProps(state){
         error: state.pokemonDetailsReducer.error,
         loading_species_details: state.pokemonDetailsReducer.loading_species_details,
         error_species_details: state.pokemonDetailsReducer.error_species_details
-    }
+    };
 }
 
 function mapDispatchToProps(dispatch){
     return {
-        fetchPokemonDetails: (id)=> dispatch(actions.fetch_pokemon_details_requested(id)),
-        fetchSpeciesDetails: (id)=> dispatch(actions.fetch_species_details_requested(id))
-    }
+        fetchPokemonDetails: (id) => dispatch(actions.fetch_pokemon_details_requested(id)),
+        fetchSpeciesDetails: (id) => dispatch(actions.fetch_species_details_requested(id))
+    };
 }
 
-export default connect(mapStateToProps , mapDispatchToProps)(PokemonDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(PokemonDetails);

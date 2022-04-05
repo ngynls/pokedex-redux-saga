@@ -1,11 +1,11 @@
-.jumbotron{
+.jumbotron {
     background: url('../assets/field_bg.jpg');
-    background-position:center;
-    text-align:center;
-    background-position-y:17rem;
-    margin-top:1rem;
+    background-position: center;
+    text-align: center;
+    background-position-y: 17rem;
+    margin-top: 1rem;
 
-    @media (max-width:575px){
-        background-position-y:14rem;
+    @media (max-width: 575px) {
+        background-position-y: 14rem;
     }
 }
