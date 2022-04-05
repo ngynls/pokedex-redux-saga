@@ -1,4 +1,4 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 import pokemonReducer from "./pokemonReducer";
 import pokemonDetailsReducer from "./pokemonDetailsReducer";
 

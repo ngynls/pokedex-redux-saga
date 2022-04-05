@@ -28,7 +28,17 @@
         "brace-style": [
             "warn"
         ],
-        "object-curly-spacing": "warn",
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
+        "react/jsx-curly-spacing": [
+            "warn",
+            {
+                "when": "always",
+                "children": true
+            }
+        ],
         "quotes": [
             "warn",
             "double"

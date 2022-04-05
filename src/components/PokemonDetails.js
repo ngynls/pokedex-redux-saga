@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import * as actions from "../store/actions/actions";
 import "../components/PokemonDetails.scss";
 import PokemonDetailElement from "./PokemonDetailElement";
@@ -11,11 +11,11 @@ class PokemonDetails extends Component {
         spriteUrl: ""
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.fetchDetails();
     }
 
-    fetchDetails= async() => {
+    fetchDetails= async () => {
         const id = this.props.match.params.id;
         const spriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png";
         await this.props.fetchPokemonDetails(id);
@@ -27,26 +27,27 @@ class PokemonDetails extends Component {
         });
     }
 
-    render(){
+    render() {
         return (
             <div className="container">
                 {
-                    this.props.loading && this.props.loading_species_details ?
+                    this.props.loading && 
+                    this.props.loading_species_details ?
                     (
                         <div>Loading...</div>
                     )
                     :
                     (
                         <PokemonDetailElement 
-                        id={this.state.id} 
-                        name={this.props.name} 
-                        types={this.props.types}
-                        stats={this.props.stats}
-                        abilities={this.props.abilities} 
-                        height={this.props.height} 
-                        weight={this.props.weight} 
-                        description={this.props.description}
-                        spriteUrl={this.state.spriteUrl}
+                        id={ this.state.id } 
+                        name={ this.props.name } 
+                        types={ this.props.types }
+                        stats={ this.props.stats }
+                        abilities={ this.props.abilities } 
+                        height={ this.props.height } 
+                        weight={ this.props.weight } 
+                        description={ this.props.description }
+                        spriteUrl={ this.state.spriteUrl }
                         />
                     )
                 }
@@ -55,7 +56,7 @@ class PokemonDetails extends Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
         name: state.pokemonDetailsReducer.name,
         types: state.pokemonDetailsReducer.types,
@@ -71,7 +72,7 @@ function mapStateToProps(state){
     };
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     return {
         fetchPokemonDetails: (id) => dispatch(actions.fetch_pokemon_details_requested(id)),
         fetchSpeciesDetails: (id) => dispatch(actions.fetch_species_details_requested(id))

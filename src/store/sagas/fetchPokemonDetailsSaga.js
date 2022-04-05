@@ -1,9 +1,9 @@
-import {call, put, takeLatest, all} from "redux-saga/effects";
+import { call, put, takeLatest, all } from "redux-saga/effects";
 import * as ACTION_TYPES from "../actions/action_types";
 import * as actions from "../actions/actions";
-import {api} from "../../api/pokemonApi";
+import { api } from "../../api/pokemonApi";
 
-function* fetchPokemonDetails(action){
+function* fetchPokemonDetails(action) {
     try {
         const data = yield call(api.getPokemonDetails, action.payload);
         yield put(actions.fetch_pokemon_details_success(data));
@@ -13,7 +13,7 @@ function* fetchPokemonDetails(action){
     }
 }
 
-function* fetchSpeciesDetails(action){
+function* fetchSpeciesDetails(action) {
     try {
         const data = yield call(api.getSpeciesDetails, action.payload);
         yield put(actions.fetch_species_details_success(data));
@@ -23,7 +23,7 @@ function* fetchSpeciesDetails(action){
     }
 }
 
-export default function* watchFetchPokemonDetails(){
+export default function* watchFetchPokemonDetails() {
     yield all([
         takeLatest(ACTION_TYPES.FETCH_POKEMON_DETAILS_REQUESTED, fetchPokemonDetails),
         takeLatest(ACTION_TYPES.FETCH_SPECIES_DETAILS_REQUESTED, fetchSpeciesDetails)
